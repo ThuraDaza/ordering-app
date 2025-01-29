@@ -1,0 +1,211 @@
+<div class="item-container clearfix">
+  <div class="section">
+    <% if @coffee.length > 0 %>
+      <div>
+        <h3 class="hdr"><%= @coffee[0].category.capitalize %></h3>
+        <% @coffee.each do |item| %>
+          <div class="card">
+            <div class="card-body">
+              <img src="<%= item.image %>" alt="<%= item.name %>" width="100%" height="225">
+              
+              <ul class="item-detail">
+                <li class="<%= item.id %> item-name" value="<%= item.name %>"><%= item.name %></li>
+                <li class="<%= item.id %>" value="<%= item.price %>"><%= item.price %> MMK</li>
+                <li>
+                  <i class="far fa-minus-square icon"
+                    onClick="{down(<%= item.id %>)}"></i>
+                  <span id="<%= item.id %>" value="1">1</span>
+                  <i class="far fa-plus-square icon" onClick="{up(<%= item.id %>)}"></i>
+                </li>
+              </ul>
+
+              <a href="" class="btn select" data-remote = true data-method = "POST" onClick="get_url(<%= item.id %>)">Select</a>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <% if @icecream.length > 0 %>
+      <div>
+        <h3 class="hdr"><%= @icecream[0].category.capitalize %></h3>
+        <% @icecream.each do |item| %>
+          <div class="card">
+            <div class="card-body">
+              <img src="<%= item.image %>" alt="<%= item.name %>" width="100%" height="220">
+              <ul class="item-detail">
+                <li class="<%= item.id %> item-name" value="<%= item.name %>"><%= item.name %></li>
+                <li class="<%= item.id %>" value="<%= item.price %>"><%= item.price %> MMK</li>
+                <li>
+                  <i class="far fa-minus-square icon" onClick="{down(<%= item.id %>)}"></i>
+                  <span id="<%= item.id %>" value="1">1</span>
+                  <i class="far fa-plus-square icon" onClick="{up(<%= item.id %>)}"></i>
+                </li>
+              </ul>
+              <a href="" class="btn select" data-remote = true data-method = "POST" onClick="get_url(<%= item.id %>)">Select</a>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <% if @tea.length > 0 %>
+      <div>
+        <h3 class="hdr"><%= @tea[0].category.capitalize %></h3>
+        <% @tea.each do |item| %>
+          <div class="card">
+            <div class="card-body">
+              <img src="<%= item.image %>" alt="<%= item.name %>" width="100%" height="220">
+              <ul class="item-detail">
+                <li class="<%= item.id %> item-name" value="<%= item.name %>"><%= item.name %></li>
+                <li class="<%= item.id %>" value="<%= item.price %>"><%= item.price %> MMK</li>
+                <li>
+                  <i class="far fa-minus-square icon" onClick="{down(<%= item.id %>)}"></i>
+                  <span id="<%= item.id %>" value="1">1</span>
+                  <i class="far fa-plus-square icon" onClick="{up(<%= item.id %>)}"></i>
+                </li>
+              </ul>
+              <a href="" class="btn select" data-remote = true data-method = "POST" onClick="get_url(<%= item.id %>)">Select</a>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <% if @cake.length > 0 %>
+      <div>
+        <h3 class="hdr"><%= @cake[0].category.capitalize %></h3>
+        <% @cake.each do |item| %>
+          <div class="card">
+            <div class="card-body">
+              <img src="<%= item.image %>" alt="<%= item.name %>" width="100%" height="220">
+              <ul class="item-detail">
+                <li class="<%= item.id %> item-name" value="<%= item.name %>"><%= item.name %></li>
+                <li class="<%= item.id %>" value="<%= item.price %>"><%= item.price %> MMK</li>
+                <li>
+                  <i class="far fa-minus-square icon" onClick="{down(<%= item.id %>)}"></i>
+                  <span id="<%= item.id %>" value="1">1</span>
+                  <i class="far fa-plus-square icon" onClick="{up(<%= item.id %>)}"></i>
+                </li>
+              </ul>
+              <a href="" class="btn select" data-remote = true data-method = "POST" onClick="get_url(<%= item.id %>)">Select</a>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <%= render "orders", orders: @orders, order_notice: @order_notice, total_price: @total_price %>
+</div>
+
+<script>
+  function up(id) {
+    quantity = document.getElementById(id)
+    quantity.innerHTML = ++quantity.attributes[1].value;
+  }
+
+  function down(id) {
+    quantity = document.getElementById(id)
+    if (quantity.attributes[1].value == 1) $(`#${id}`).attr("disabled", true);
+    else quantity.innerHTML = --quantity.attributes[1].value;
+  }
+
+  function get_url(id) {
+    values = document.getElementsByClassName(`${id}`);
+    quantity = $(`#${id}`).attr("value")
+    name = $(values.item(0)).attr("value")
+    price = $(values.item(1)).attr("value")
+    url = `/select?name=${name}&quantity=${quantity}&price=${price}`
+    $(".select").attr("href", url)
+  }
+    //heightline
+(function (factory) {
+	if(typeof module === "object" && typeof module.exports === "object") {
+		factory(require("jquery"), window, document);
+	} else {
+		factory(jQuery, window, document);
+	}
+}(function($, window, document, undefined) {
+	$.fn.heightLine = function(){
+		var target = this,fontSizeChangeTimer,windowResizeId= Math.random();
+		var heightLineObj = {
+			op : {
+				"maxWidth" : 10000,
+				"minWidth" : 0,
+				"fontSizeCheck" : false
+			},
+			setOption : function(op){
+				this.op = $.extend(this.op,op);
+			},
+			destroy : function(){
+				target.css("height","");
+			},
+			create : function(op){
+				var self = this,
+					maxHeight = 0,
+					windowWidth = $(window).width();
+				self.setOption(op);
+				if( windowWidth<=self.op.maxWidth && windowWidth>=self.op.minWidth ){
+					target.each(function(){
+						if($(this).outerHeight()>maxHeight){
+							maxHeight = $(this).outerHeight();
+						}
+					}).each(function(){
+						var height = maxHeight
+								   - parseInt($(this).css("padding-top"))
+								   - parseInt($(this).css("padding-bottom"));
+						$(this).height(height);
+					});
+				}
+			},
+			refresh : function(op){
+				this.destroy();
+				this.create(op);
+			},
+			removeEvent :function(){
+				$(window).off("resize."+windowResizeId);
+				target.off("destroy refresh");
+				clearInterval(fontSizeChangeTimer);
+			}
+		}
+		if(typeof arguments[0] === "string" && arguments[0] === "destroy"){
+			target.trigger("destroy");
+		}else if(typeof arguments[0] === "string" && arguments[0] === "refresh"){
+			target.trigger("refresh");
+		}else{
+			heightLineObj["create"](arguments[0]);
+			
+			$(window).on("resize."+windowResizeId,function(){
+				heightLineObj["refresh"]();
+			});
+
+			target.on("destroy",function(){
+				heightLineObj["removeEvent"]();
+				heightLineObj["destroy"]();
+			}).on("refresh",function(){
+				heightLineObj["refresh"]();
+			});
+
+			if(heightLineObj.op.fontSizeCheck){
+				
+				if($("#fontSizeChange").length<=0){
+					var fontSizeChange = $("<span id='fontSizeChange'></span>").css({
+						width:0,
+						height:"1em",
+						position:"absolute",
+						left:0,
+						top:0
+					}).appendTo("body");
+				}
+				var defaultFontSize = $("#fontSizeChange").height();
+				fontSizeChangeTimer = setInterval(function(){
+					if(defaultFontSize != $("#fontSizeChange").height()){
+						heightLineObj["refresh"]();
+					}
+				},100);
+			}
+		}
+		return target;
+	}
+}));
+    $(".item-name").heightLine();
+
+
+</script>

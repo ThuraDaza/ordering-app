@@ -1,0 +1,11 @@
+<div class="container">
+  <% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+      <p style="color: red"><% error %></p> 
+    <% end %>
+  <% end %>
+  <h2>Update Item Info</h2>
+  <div class="create-form">
+    <%= render "form" %>
+  </div>
+</div>

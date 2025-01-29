@@ -1,0 +1,27 @@
+<div class="container">
+
+  <div class="login-photo">
+    <%= image_tag ("login_icons/img_chef_login.jpg"), class: "logo", alt: "chef login icon" %>
+  </div>
+  <h2>Chef Login</h2>
+
+  <%= form_with url: chef_sign_in_path, class: "login-form" do |form| %>
+    <div class="mb-20">
+      <%= form.text_field :email, class: "text-box", placeholder: "Enter Email", required: true %>
+    </div>
+
+    <div class="mb-20">
+      <%= form.password_field :password, class: "text-box", placeholder: "Enter Password", required: true %>
+    </div>
+
+    <div class="login-link">
+      <%= link_to "Login As Waiter?", waiter_login_path, class: "links" %>
+      <%= link_to "Forgot Password?", chef_forget_password_path, class: "links" %>
+    </div>
+
+    <p class="create-acc">Do not have any account? <%= link_to "Sign Up Account", new_chef_path, class: "links" %></p>
+    <div class="submit"><%= form.submit "Sign In", class: "submit-btn" %></div>
+
+  <% end %>
+
+</div>

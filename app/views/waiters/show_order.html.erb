@@ -1,0 +1,31 @@
+<div class="item-container">
+  <div class="detail">
+    <h3 class="order-title">Order <%= @order.id %></h3>
+    <p class="order-status">Status - <%= @order.status %></p>
+    <ul class="order-item-header">
+      <li>Name</li>
+      <li>Quantity</li>
+      <li>Price</li>
+    </ul>
+    <% @order.order_items.each do |item| %>
+      <ul class="order-item">
+        <li><%= item.item_name %></li>
+        <li><%= item.quantity %></li>
+        <li><%= item.price %></li>
+      </ul>
+    <% end %>
+    <div class="order-item-footer clearfix">
+      <div class="order-price">
+        <span>Total Price - <%= @order.total_price %></span>
+      </div>
+      <div class="back">
+        <%= link_to "back", orders_path, class: "btn-back" %>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+    setInterval(() => {
+        $(".order-status").load("/order?oid=<%= @order.id %> .order-status")
+    }, 5000);
+</script>

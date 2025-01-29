@@ -1,0 +1,38 @@
+<div class="order-detail">
+  <h3 class="order-title">Orders</h3>
+  <% unless @orders.blank? %>
+    <table class="table">
+      <thead class="thead">
+        <tr>
+          <th width="80">Order Id</th>
+          <th width="80">Status</th>
+          <th width="300">Order Items</th>
+          <th width="100"></th>
+          <th width="100"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @orders.each do |order| %>
+          <tr id="<%= order.id %>">
+            <td><%= order.id %></td>
+            <td><%= order.status %></td>
+            <td>
+              <% order.order_items.each do |order_item| %>
+                <%= order_item.item_name %>,
+              <% end %>
+            </td>
+            <td><%= link_to "detail", order_path(oid: order.id), class: "btn-detail" %></td>
+            <% if order.status == "finished" %>
+              <td>
+               <%= link_to "pick up", pick_order_path(id: order.id), remote: true, method: :post, class: "btn-pick" %>
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <h3 class="center">No Order Yet!</h3>
+  <% end %>
+  <%= link_to "back", waiters_path, class: "btn-back" %>
+</div>

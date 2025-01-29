@@ -1,0 +1,8 @@
+<div class="item-container">
+  <%= render "order_detail", orders: @orders %>
+</div>
+<script>
+    setInterval(() => {
+        $(".order-detail").load("/orders .order-detail")
+    }, 5000);
+</script>

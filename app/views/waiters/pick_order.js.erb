@@ -1,0 +1,3 @@
+$(".btn-pick").bind("ajax:success", function() {
+  $(".order-detail").replaceWith("<%= j render "order_detail", orders: @orders %>")
+})

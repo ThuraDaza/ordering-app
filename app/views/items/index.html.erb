@@ -1,0 +1,175 @@
+<div class="main-container">
+  <div class="create-item">
+    Create a new Item?<%= link_to "Create Item", new_item_path %>
+  </div>
+  <% if @coffee.length > 0 %>
+    <div>
+      <h2 class="hdr"><%= @coffee[0].category.capitalize %></h2>
+      <div class="item-container clearfix">
+        <% @coffee.each do |item| %>
+          <div class="items-div">
+           <p><%= image_tag item.image.url(:original) %></p>
+            <p class="item-detail item-name"><%= item.name %></p>
+            <p class="item-detail"><%= item.price %>MMK</p>
+            <p class="link-btn"><%= link_to "Update ", edit_item_path(item[:id]) %>
+            </p>
+            <p class="delete-btn">
+              <%= link_to "Delete", item_path(item[:id]), method: :delete, data: { confirm: "Are you sure you want to delete this item?" } %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  <% if @icecream.length > 0 %>
+    <div>
+      <h2 class="hdr"><%= @icecream[0].category.capitalize %></h2>
+      <div class="item-container clearfix">
+        <% @icecream.each do |item| %>
+          <div class="items-div">
+            <p><%= image_tag item.image.url(:original) %></p>
+            <p class="item-detail item-name"><%= item.name %></p>
+            <p class="item-detail"><%= item.price %>MMK</p>
+            <p class="link-btn"><%= link_to "Update", edit_item_path(item[:id]) %>
+            </p>
+            <p class="delete-btn">
+              <%= link_to "Delete", item_path(item[:id]), method: :delete, data: { confirm: "Are you sure you want to delete this item?" } %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  <% if @cake.length > 0 %>
+    <div>
+      <h2 class="hdr"><%= @cake[0].category.capitalize %></h2>
+      <div class="item-container clearfix">
+        <% @cake.each do |item| %>
+          <div class="items-div">
+            <p><%= image_tag item.image.url(:original) %></p>
+            <p class="item-detail item-name"><%= item.name %></p>
+            <p class="item-detail"><%= item.price %>MMK</p>
+            <p class="link-btn"><%= link_to "Update", edit_item_path(item[:id]) %>
+            </p>
+            <p class="delete-btn">
+              <%= link_to "Delete", item_path(item[:id]), method: :delete, data: { confirm: "Are you sure you want to delete this item?" } %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  <% if @tea.length > 0 %>
+    <div>
+      <h2 class="hdr"><%= @tea[0].category.capitalize %></h2>
+      <div class="item-container clearfix">
+        <% @tea.each do |item| %>
+          <div class="items-div">
+            <p><%= image_tag item.image.url(:original) %></p>
+            <p class="item-detail item-name"><%= item.name %></p>
+            <p class="item-detail"><%= item.price %>MMK</p>
+            <p class="link-btn"><%= link_to "Update", edit_item_path(item[:id]) %>
+            </p>
+            <p class="delete-btn">
+              <%= link_to "Delete", item_path(item[:id]), method: :delete, data: { confirm: "Are you sure you want to delete this item?" } %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<script>
+ //heightline
+(function (factory) {
+	if(typeof module === "object" && typeof module.exports === "object") {
+		factory(require("jquery"), window, document);
+	} else {
+		factory(jQuery, window, document);
+	}
+}(function($, window, document, undefined) {
+	$.fn.heightLine = function(){
+		var target = this,fontSizeChangeTimer,windowResizeId= Math.random();
+		var heightLineObj = {
+			op : {
+				"maxWidth" : 10000,
+				"minWidth" : 0,
+				"fontSizeCheck" : false
+			},
+			setOption : function(op){
+				this.op = $.extend(this.op,op);
+			},
+			destroy : function(){
+				target.css("height","");
+			},
+			create : function(op){
+				var self = this,
+					maxHeight = 0,
+					windowWidth = $(window).width();
+				self.setOption(op);
+				if( windowWidth<=self.op.maxWidth && windowWidth>=self.op.minWidth ){
+					target.each(function(){
+						if($(this).outerHeight()>maxHeight){
+							maxHeight = $(this).outerHeight();
+						}
+					}).each(function(){
+						var height = maxHeight
+								   - parseInt($(this).css("padding-top"))
+								   - parseInt($(this).css("padding-bottom"));
+						$(this).height(height);
+					});
+				}
+			},
+			refresh : function(op){
+				this.destroy();
+				this.create(op);
+			},
+			removeEvent :function(){
+				$(window).off("resize."+windowResizeId);
+				target.off("destroy refresh");
+				clearInterval(fontSizeChangeTimer);
+			}
+		}
+		if(typeof arguments[0] === "string" && arguments[0] === "destroy"){
+			target.trigger("destroy");
+		}else if(typeof arguments[0] === "string" && arguments[0] === "refresh"){
+			target.trigger("refresh");
+		}else{
+			heightLineObj["create"](arguments[0]);
+			
+			$(window).on("resize."+windowResizeId,function(){
+				heightLineObj["refresh"]();
+			});
+
+			target.on("destroy",function(){
+				heightLineObj["removeEvent"]();
+				heightLineObj["destroy"]();
+			}).on("refresh",function(){
+				heightLineObj["refresh"]();
+			});
+
+			if(heightLineObj.op.fontSizeCheck){
+				
+				if($("#fontSizeChange").length<=0){
+					var fontSizeChange = $("<span id='fontSizeChange'></span>").css({
+						width:0,
+						height:"1em",
+						position:"absolute",
+						left:0,
+						top:0
+					}).appendTo("body");
+				}
+				var defaultFontSize = $("#fontSizeChange").height();
+				fontSizeChangeTimer = setInterval(function(){
+					if(defaultFontSize != $("#fontSizeChange").height()){
+						heightLineObj["refresh"]();
+					}
+				},100);
+			}
+		}
+		return target;
+	}
+}));
+    $(".item-name").heightLine();
+
+</script>

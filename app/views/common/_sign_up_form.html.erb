@@ -1,0 +1,42 @@
+<%= form_with model: user, class: "login-form" do |f| %>
+  <div class="mb-20">
+    <%= f.text_field :name, class: "text-box", placeholder: "Enter Name" %>
+    <% user.errors.full_messages_for(:name).each do |message| %>
+      <div class="text-danger"><%= message %></div>
+    <% end %>
+  </div>
+  <div class="mb-20">
+    <%= f.email_field :email, class: "text-box", placeholder: "Enter Email" %>
+    <% user.errors.full_messages_for(:email).each do |message| %>
+      <div class="text-danger"><%= message %></div>
+    <% end %>
+  </div>
+  <div class="mb-20">
+    <%= f.password_field :password, class: "text-box", placeholder: "Enter Password" %>
+    <% user.errors.full_messages_for(:password).each do |message| %>
+      <div class="text-danger"><%= message %></div>
+    <% end %>
+  </div>
+  <div class="mb-20">
+    <%= f.text_field :phone, class: "text-box", placeholder: "Enter Phone" %>
+    <% user.errors.full_messages_for(:phone).each do |message| %>
+      <div class="text-danger"><%= message %></div>
+    <% end %>
+  </div>
+  <div class="mb-20">
+    <%= f.text_field :birthday, onfocus: "(this.type='date')", class: "text-box", placeholder: "Enter Birthday" %>
+    <% user.errors.full_messages_for(:birthday).each do |message| %>
+      <div class="text-danger"><%= message %></div>
+    <% end %>
+  </div>
+  <div class="mb-20">
+    <%= f.text_area :address, class: "text-box", placeholder: "Enter Address" %>
+    <% user.errors.full_messages_for(:address).each do |message| %>
+      <div class="text-danger"><%= message %></div>
+    <% end %>
+  </div>
+  <div class="submit">
+    <%= f.submit "Sign Up", class: "submit-btn" %>
+    <%= link_to "Go Back", root_path, class: "cancel-btn" %>
+  </div>
+<% end %>

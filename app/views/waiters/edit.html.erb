@@ -1,0 +1,44 @@
+<div class="outer-container">
+  <div class="container">
+    <div class="login-photo">
+      <%= image_tag ("login_icons/img_waiter_login.png"), class: "logo", alt: "sign up logo" %>
+    </div>
+    <h2>Update Profile</h2>
+    <%= form_with model: @waiter, class: "login-form" do |f| %>
+      <div class="mb-20">
+        <%= f.text_field :name, class: "text-box", placeholder: "Enter Name" %>
+        <% @waiter.errors.full_messages_for(:name).each do |message| %>
+          <div class="text-danger"><%= message %></div>
+        <% end %>
+      </div>
+      <div class="mb-20">
+        <%= f.email_field :email, class: "text-box", placeholder: "Enter Email" %>
+        <% @waiter.errors.full_messages_for(:email).each do |message| %>
+          <div class="text-danger"><%= message %></div>
+        <% end %>
+      </div>
+      <div class="mb-20">
+        <%= f.text_field :phone, class: "text-box", placeholder: "Enter Phone" %>
+        <% @waiter.errors.full_messages_for(:phone).each do |message| %>
+          <div class="text-danger"><%= message %></div>
+        <% end %>
+      </div>
+      <div class="mb-20">
+        <%= f.text_field :birthday, onfocus: "(this.type='date')", class: "text-box", placeholder: "Enter Birthday" %>
+        <% @waiter.errors.full_messages_for(:birthday).each do |message| %>
+          <div class="text-danger"><%= message %></div>
+        <% end %>
+      </div>
+      <div class="mb-20">
+        <%= f.text_area :address, class: "text-box", placeholder: "Enter Address" %>
+        <% @waiter.errors.full_messages_for(:address).each do |message| %>
+          <div class="text-danger"><%= message %></div>
+        <% end %>
+      </div>
+      <div class="submit">
+        <%= f.submit "Update", class: "submit-btn" %>
+        <%= link_to "Go Back", waiter_path(id: session[:waiter_id]), class: "cancel-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>

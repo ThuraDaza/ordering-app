@@ -1,0 +1,145 @@
+.main-container {
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.inner-container {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.order-dtil {
+  line-height: 30px;
+  margin-bottom: 40px;
+  padding: 10px;
+  border: 2px solid #8fa8a9;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+table,
+tr {
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+}
+
+th {
+  border: 2px solid #ffffff;
+  background-color: #deb887;
+  font-style: italic;
+}
+
+td {
+  line-height: 40px;
+}
+
+.order-list-btn-div {
+  text-align: center;
+}
+
+.btn-process,
+.btn-finish {
+  display: inline-block;
+  margin: 20px 20px 20px 20px;
+  padding: 5px 10px;
+  border: 2px solid #000000;
+  color: #000000;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.btn-process:hover,
+.btn-finish:hover {
+  background-color: #0275d8;
+  color: #ffffff;
+}
+
+// For Ipad
+@media screen and (min-width:768px) and (max-width:1024px) {
+  .main-container {
+    width: 100%;
+  }
+
+  .inner-container {
+    width: 70%;
+    margin-top: 4.883vw;
+  }
+
+  .order-dtil {
+    line-height: 2.93vw;
+    margin-bottom: 3.906vw;
+    padding: 0.977vw;
+    border: 0.195vw solid #8fa8a9;
+    font-size: 1.953vw;
+    border-radius: 0.977vw;
+  }
+
+  table,
+  tr {
+    width: 100%;
+    font-size: 1.953vw;
+  }
+
+  th {
+    border: 0.195vw solid #ffffff;
+  }
+
+  td {
+    line-height: 3.906vw;
+  }
+
+  .btn-process,
+  .btn-finish {
+    margin: 1.953vw;
+    padding: 0.488vw 0.977vw;
+    border: 0.195vw solid #000000;
+    border-radius: 0.488vw;
+  }
+}
+
+//For SP
+@media screen and (max-width:767.9px) {
+  .main-container {
+    width: 100%;
+  }
+
+  .inner-container {
+    width: 70%;
+    margin-top: 7.814vw;
+  }
+
+  .order-dtil {
+    line-height: 4.688vw;
+    margin-bottom: 6.250vw;
+    padding: 1.563vw;
+    border: 0.313vw solid #8fa8a9;
+    font-size: 3.125vw;
+    border-radius: 1.563vw;
+  }
+
+  table,
+  tr {
+    width: 100%;
+    font-size: 3.125vw;
+  }
+
+  th {
+    border: 0.313vw solid #ffffff;
+  }
+
+  td {
+    line-height: 6.25vw;
+  }
+
+  .btn-process,
+  .btn-finish {
+    margin: 3.125vw;
+    padding: 0.781vw 1.563vw;
+    border: 0.313vw solid #000000;
+    border-radius: 0.781vw;
+  }
+}

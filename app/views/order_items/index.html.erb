@@ -1,0 +1,35 @@
+<div class="main-container">
+  <div class="inner-container">
+  <div class="hdr mb-40"><h2>Order List</h2></div> 
+    <% unless @orders.blank? %>
+      <% @orders.each do |order| %>
+        <div class="order-dtil">
+          <h3>Order No. <%= order.id %></h3>
+          <table>
+            <tr>
+              <th><strong>Item Name</strong></th>
+              <th><strong>Quantity</strong></th>
+            </tr>
+            <% order.order_items.each do |order_items| %>
+            <tr>
+              <td><%= order_items.item_name %></td>
+              <td><%= order_items.quantity %></td>
+            </tr>
+            <% end %>
+          </table>
+          <div class="order-list-btn-div">
+            <%= link_to "Processing", processing_path(order: order.id), method: :POST, class: "btn-process" %>
+            <%= link_to "Finished", finished_path(order: order.id), method: :POST, class: "btn-finish", :remote => true %>
+          </div>
+        </div>
+      <% end %>
+      <% else %>
+        <h3 class="center">No Order Yet!</h3>
+    <% end %>
+  </div>
+</div>
+<script>
+    setInterval(function() {
+        $(".main-container").load("order_items .main-container");
+    }, 5000);
+</script>

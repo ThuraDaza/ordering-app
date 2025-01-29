@@ -1,0 +1,6 @@
+$(".confirm").bind("ajax:success", () => {
+  $(".aside").replaceWith("<%= j render "orders", order_notice: @order_notice, orders: [] %>")
+  setTimeout(() => {
+    $(".order-notice").fadeOut();
+  }, 5000);
+})

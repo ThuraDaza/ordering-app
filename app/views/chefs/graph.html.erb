@@ -1,0 +1,17 @@
+<div class="graph-container">
+  <h1 class="graph-ttl">Weekly Best Selling Items' Graph</h1>
+  <%= form_with url: graph_path, class: "graph-form mb-20", method: :get do |f| %>
+    <div class="mb-20">
+      <%= f.text_field :graph_date, onfocus: "(this.type='date')", max: Date.today - 7, class: "text-box", placeholder: "Choose a start date" %>
+    </div>
+    
+    <div class="graph-submit">
+      <%= f.submit "Show Data", class: "submit-btn" %>
+    </div>
+  <% end %>
+
+  <div class="chart-container">
+    <%= column_chart @graph_data, width: "100%", xtitle: "Items", ytitle: "Quantity", loading: "Loading...", empty: "No data", colors: ["#f70a16", "#35fc03","#f7d70a", "#82817c", "#1a45f0", "#f28d11", "#6b1fde"] %>
+    <p class="graph-content">Top 7 best selling items from "<%= @start_date %>" to "<%=@end_date%>"</p> 
+  </div>
+</div>

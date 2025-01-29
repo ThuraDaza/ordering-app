@@ -1,0 +1,17 @@
+<div class="ResetForm">
+  <h2>Reset Password</h2>
+  <%= form_with model: @chef, url: chef_password_reset_edit_path(token: params[:token]) do |form| %>
+    <div class="box">
+      <%= form.password_field :password, placeholder: "New Password", class: "password", required: true %>
+    </div>
+    <div class="box1">
+      <%= form.password_field :password_confirmation, placeholder: "Confirm Password", class: "password", required: true %>
+    </div>
+    <div class="notice">
+      <%= @message %>
+    </div>
+    <div class="update">
+      <%= form.submit "Update", class: "btn" %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,8 @@
+<div class="container">
+  <h2>Edited Item</h2>
+  <h3><%= @item.category %></h3>
+  <div class="img-div"><%= image_tag @item.image.url(:original), class: "img-show" %></div>
+  <div class="show-item"><%= @item.name %></div>
+  <div class="show-item"><%= @item.price %>MMK</div>
+  <%= link_to "back to Items", items_path %>
+</div>

@@ -1,0 +1,389 @@
+// Place all the styles related to the chefs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.container {
+  margin: 50px auto;
+  padding: 50px;
+  border: solid #8fa8a9;
+  max-width: 500px;
+  border-radius: 20px;
+}
+
+h2 {
+  color: cadetblue;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 24px;
+  text-align: center;
+}
+
+.text-danger {
+  color: red;
+}
+
+.login-form {
+  width: 80%;
+  margin: 50px auto auto auto;
+}
+
+.login-photo {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.logo {
+  width: 100px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.text-box {
+  width: calc(100% - 25px);
+  padding: 10px;
+  border: 2px solid #8fa8a9;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.text-box:hover {
+  border-color: rgb(31, 158, 31);
+}
+
+.login-link {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.submit {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit-btn,
+.cancel-btn {
+  padding: 10px;
+  border: 2px solid #8fa8a9;
+  color: #000000;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.submit-btn:hover {
+  background-color: green;
+  color: #ffffff;
+}
+
+.cancel-btn {
+  border: 1px solid;
+  text-decoration: none;
+}
+
+.cancel-btn:hover {
+  background-color: #0275d8;
+  color: #ffffff;
+}
+
+// graph page
+.graph-container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.chart-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.graph-ttl {
+  margin-top: 20px;
+  color: dimgray;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 24px;
+  text-align: center;
+}
+
+.graph-form {
+  width: 60%;
+  margin: 50px auto;
+}
+
+.graph-submit {
+  text-align: center;
+}
+
+.graph-content {
+  margin-top: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 18px;
+  text-align: center;
+}
+
+// chef profile & change password
+.outer-container {
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.profile-password {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.column {
+  display: flex;
+  margin-right: 20px;
+}
+
+.left {
+  width: 50%;
+  text-align: right;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 35px;
+}
+
+.right {
+  width: 50%;
+  word-break: break-all;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 18px;
+  font-style: italic;
+}
+
+//For Ipad
+@media screen and (min-width:768px) and (max-width:1024px) {
+  .container {
+    margin: 4.883vw auto auto auto;
+    padding: 4.883vw;
+    width: 50vw;
+    border-radius: 1.953vw;
+  }
+
+  h2 {
+    font-size: 2.344vw;
+  }
+
+  .login-form {
+    width: 80%;
+    margin: 4.883vw auto auto auto;
+  }
+
+  .login-photo {
+    margin-bottom: 1.953vw;
+  }
+
+  .logo {
+    width: 9.766vw;
+  }
+
+  .mb-20 {
+    margin-bottom: 1.953vw;
+  }
+
+  .text-box {
+    width: calc(100% - 2.441vw);
+    padding: 0.977vw;
+    border: 0.195vw solid #8fa8a9;
+    font-size: 1.563vw;
+    border-radius: 0.977vw;
+  }
+
+  .login-link {
+    margin-bottom: 1.953vw;
+  }
+
+  .submit-btn,
+  .cancel-btn {
+    padding: 0.977vw;
+    border: 0.195vw solid #8fa8a9;
+    border-radius: 0.977vw;
+    font-size: 1.563vw;
+  }
+
+  .cancel-btn {
+    border: 0.098vw solid;
+  }
+
+  // graph page
+  .graph-container {
+    max-width: 100%;
+  }
+
+  .chart-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .graph-ttl {
+    margin-top: 1.953vw;
+    font-size: 2.344vw;
+  }
+
+  .graph-form {
+    width: 60%;
+    margin: 2.344vw auto;
+  }
+
+
+  .graph-content {
+    margin-top: 1.953vw;
+    font-size: 1.758vw;
+  }
+
+  // chef profile & change password
+  .outer-container {
+    width: 100%;
+  }
+
+  .profile-password {
+    margin-top: 0.977vw;
+    margin-left: 0.977vw;
+    font-size: 1.563vw;
+  }
+
+  .mb-10 {
+    margin-bottom: 0.977vw;
+  }
+
+  .column {
+    margin-right: 1.953vw;
+  }
+
+  .left {
+    font-size: 1.758vw;
+    margin-right: 3.418vw;
+  }
+
+  .right {
+    font-size: 1.758vw;
+  }
+}
+
+//For SP
+@media screen and (max-width:767.9px) {
+  .container {
+    margin: 7.813vw auto auto auto;
+    padding: 4.813vw;
+    width: 60vw;
+    border-radius: 3.125vw;
+  }
+
+  h2 {
+    font-size: 3.750vw;
+  }
+
+  .text-danger {
+    font-size: 2.513vw;
+  }
+
+  .login-form {
+    width: 80%;
+    margin: 7.813vw auto auto auto;
+  }
+
+  .login-photo {
+    margin-bottom: 3.125vw;
+  }
+
+  .logo {
+    width: 15.625vw;
+  }
+
+  .mb-20 {
+    margin-bottom: 3.125vw;
+  }
+
+  .text-box {
+    width: calc(100% - 3.906vw);
+    padding: 1.563vw;
+    border: 0.313vw solid #8fa8a9;
+    font-size: 2.5vw;
+    border-radius: 1.563vw;
+  }
+
+  .login-link {
+    margin-bottom: 3.125vw;
+  }
+
+  .submit-btn,
+  .cancel-btn {
+    padding: 1.563vw;
+    border: 0.313vw solid #8fa8a9;
+    border-radius: 1.563vw;
+    font-size: 2.513vw;
+  }
+
+  .cancel-btn {
+    border: 0.156vw solid;
+  }
+
+  // graph page
+  .graph-container {
+    max-width: 100%;
+  }
+
+  .chart-container {
+    width: 100%;
+  }
+
+  .graph-ttl {
+    margin-top: 3.125vw;
+    font-size: 3.750vw;
+  }
+
+  .graph-form {
+    width: 60%;
+    margin: 7.813vw auto;
+  }
+
+  .graph-content {
+    margin-top: 3.125vw;
+    font-size: 2.813vw;
+  }
+
+  // chef profile & change password
+  .outer-container {
+    width: 100%;
+  }
+
+  .profile-password {
+    margin-top: 1.563vw;
+    margin-left: 1.563vw;
+    font-size: 2.500vw;
+  }
+
+  .mb-10 {
+    margin-bottom: 1.563vw;
+  }
+
+  .column {
+    margin-right: 3.125vw;
+  }
+
+  .left {
+    font-size: 2.513vw;
+    margin-right: 5.469vw;
+  }
+
+  .right {
+    font-size: 2.513vw;
+  }
+
+}

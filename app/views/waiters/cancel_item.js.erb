@@ -1,0 +1,4 @@
+$(".cancel").bind("ajax:success", function() {
+  console.log("reach");
+  $(".aside").replaceWith("<%= j render "orders", order_notice: @order_notice, orders: session[:orders], total_price: session[:total_price] %>")
+})

@@ -1,0 +1,39 @@
+<div class="outer-container">
+  <div class="container">
+    <h2 class="mb-20">Chef Profile</h2>
+    <div class="login-photo">
+      <%= image_tag ("login_icons/img_chef_login.jpg"), class: "logo", alt: "sign up logo" %>
+    </div>
+   <div class="column mb-20">
+    <p class="left">Name:</p>
+    <span class="right"><%= @chef.name %></span>
+    </div>
+
+    <div class="column mb-20">
+    <p class="left">Email:</p>
+    <span class="right"><%= @chef.email %></span>
+    </div>
+
+    <div class="column mb-20">
+    <p class="left">Phone:</p>
+    <span class="right"><%= @chef.phone %></span>
+    </div>
+  
+    <div class="column mb-20">
+    <p class="left">Address:</p>
+    <span class="right"><%= @chef.address %></span>
+    </div>
+
+    <div class="column mb-20">
+    <p class="left">Birthday:</p>
+    <span class="right"><%= @chef.birthday %></span>
+    </div>
+   
+    <div class="profile-password">
+      <div class="mb-10">
+        <%= link_to "Edit Profile", edit_chef_path(session[:chef_id]) %><br>
+      </div>
+      <%= link_to "Change Password", password_path %>
+    </div>
+  </div>
+</div>

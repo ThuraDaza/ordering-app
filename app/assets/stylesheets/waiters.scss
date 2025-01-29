@@ -1,0 +1,814 @@
+// Place all the styles related to the waiters controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.container {
+  margin: 50px auto;
+  padding: 50px;
+  border: solid #8fa8a9;
+  max-width: 500px;
+  border-radius: 20px;
+}
+
+h2 {
+  color: cadetblue;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 24px;
+  text-align: center;
+}
+
+.text-danger {
+  color: red;
+}
+
+.login-form {
+  width: 80%;
+  margin: 50px auto auto auto;
+}
+
+.login-photo {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.logo {
+  width: 100px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.text-box {
+  width: calc(100% - 25px);
+  padding: 10px;
+  border: 2px solid #8fa8a9;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.text-box:hover {
+  border-color: rgb(31, 158, 31);
+}
+
+.login-link {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.submit {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submit-btn:hover {
+  background-color: green;
+  color: #ffffff;
+}
+
+.submit-btn,
+.cancel-btn {
+  padding: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.cancel-btn {
+  border: 1px solid;
+  text-decoration: none;
+}
+
+.cancel-btn:hover {
+  background-color: #0275d8;
+  color: #ffffff;
+}
+
+// Waiter Profile & change password
+.outer-container {
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.profile-password {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 16px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.column {
+  display: flex;
+  margin-right: 20px;
+}
+
+.left {
+  width: 50%;
+  text-align: right;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 35px;
+}
+
+.right {
+  width: 50%;
+  word-break: break-all;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 18px;
+  font-style: italic;
+}
+
+//Waiter Item List
+.item-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/*Section*/
+.section {
+  float: left;
+  width: 60%;
+  margin-top: 20px;
+}
+
+.card {
+  display: inline-block;
+  width: 22%;
+  margin: 20px 18px 20px 0px;
+
+}
+
+.card img {
+  margin-bottom: 10px;
+  border: 2px solid #916cd6;
+  border-radius: 7px;
+}
+
+.card:nth-of-type(4n) {
+  margin-right: 0;
+}
+
+.cat-title {
+  margin: 20px 0;
+  padding: 2px;
+  font-size: 40px;
+  text-align: center;
+  border-bottom: 1px solid #808080;
+}
+
+.item-detail {
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-align: center;
+  list-style-type: none;
+}
+
+.item-detail li {
+  margin-bottom: 10px;
+  word-break: break-all;
+}
+
+.icon,
+.card-body ul li span {
+  font-size: 22px;
+}
+
+.btn {
+  display: block;
+  margin-top: 10px;
+  padding: 10px 5px;
+  background-color: #0275d8;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  font-size: 16px;
+}
+
+/*Aside*/
+.aside {
+  position: sticky;
+  top: 113px;
+  float: right;
+  width: 40%;
+}
+
+.order-title {
+  margin-bottom: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.cancel {
+  color: #808080;
+}
+
+.table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.thead {
+  border-bottom: 1px solid #808080;
+}
+
+.tfoot {
+  border-top: 1px solid #808080;
+}
+
+.thead th {
+  padding: 5px;
+  font-size: 20px;
+}
+
+.table td {
+  padding: 10px;
+  font-size: 18px;
+  // word-break: break-all;
+}
+
+.detail,
+.order-detail {
+  width: 700px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.btn-detail,
+.btn-pick {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid #808080;
+  color: #000000;
+  text-decoration: none;
+}
+
+.btn-back {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 1px solid #808080;
+  color: #000000;
+  text-decoration: none;
+}
+
+.btn-detail:hover,
+.btn-pick:hover,
+.btn-back:hover {
+  background-color: #0275d8;
+  color: #ffffff;
+}
+
+.order-item-header {
+  margin: 30px 0 20px;
+  list-style-type: none;
+}
+
+.order-item {
+  margin-bottom: 10px;
+  list-style-type: none;
+}
+
+.order-item-header li,
+.order-item li {
+  display: inline-block;
+  width: 230px;
+  text-align: center;
+}
+
+.order-item-header li {
+  font-size: 24px;
+}
+
+.order-item-footer {
+  margin-top: 30px;
+}
+
+.order-price {
+  text-align: right;
+  border-top: 1px solid #000000;
+}
+
+.order-price span {
+  display: inline-block;
+  width: 230px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.back {
+  width: 195px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.order-notice {
+  display: block;
+  margin-top: 5px;
+  padding: 10px;
+  border: 1px solid #000000;
+  color: #1e9b0d;
+  text-decoration: none;
+  text-align: center;
+}
+
+.order-status {
+  font-size: 18px;
+  text-align: center;
+}
+
+//For Ipad
+@media screen and (min-width:768px) and (max-width:1024px) {
+  .container {
+    margin: 4.883vw auto auto auto;
+    padding: 4.883vw;
+    width: 50vw;
+    border-radius: 1.953vw;
+  }
+
+  h2 {
+    font-size: 2.344vw;
+  }
+
+  .login-form {
+    width: 80%;
+    margin: 4.883vw auto auto auto;
+  }
+
+  .login-photo {
+    margin-bottom: 1.953vw;
+  }
+
+  .logo {
+    width: 9.766vw;
+  }
+
+  .mb-20 {
+    margin-bottom: 1.953vw;
+  }
+
+  .text-box {
+    width: calc(100% - 2.441vw);
+    padding: 0.977vw;
+    border: 0.195vw solid #8fa8a9;
+    font-size: 1.563vw;
+    border-radius: 0.977vw;
+  }
+
+  .login-link {
+    margin-bottom: 1.953vw;
+  }
+
+  .submit-btn,
+  .cancel-btn {
+    padding: 0.977vw;
+    border-radius: 0.977vw;
+    font-size: 1.953vw;
+  }
+
+  .cancel-btn {
+    border: 0.978vw solid;
+  }
+
+  // Waiter Profile & change password
+  .outer-container {
+    width: 100%;
+  }
+
+  .profile-password {
+    margin-top: 0.977vw;
+    margin-left: 0.977vw;
+    font-size: 1.563vw;
+  }
+
+  .mb-10 {
+    margin-bottom: 0.977vw;
+  }
+
+  .column {
+    margin-right: 1.953vw;
+  }
+
+  .left {
+    font-size: 1.758vw;
+    margin-right: 3.418vw;
+  }
+
+  .right {
+    font-size: 1.758vw;
+  }
+
+  //Waiter Item List
+  .item-container {
+    width: 95%;
+    padding: 0;
+  }
+
+  /*Section*/
+  .section {
+    width: 66.23%;
+    margin-top: 1.953vw;
+  }
+
+  .card {
+    width: 22%;
+    margin: 1.953vw 1.758vw 1.953vw 0px;
+  }
+
+  .card img {
+    height: 16.973vw;
+    margin-bottom: 0.977vw;
+    border: 0.195vw solid #916cd6;
+    border-radius: 0.684vw;
+  }
+
+  .cat-title {
+    margin: 1.953vw 0;
+    padding: 0.195vw;
+    font-size: 3.906vw;
+    text-align: center;
+    border-bottom: 0.098vw solid #808080;
+  }
+
+  .item-detail {
+    margin-bottom: 1.953vw;
+    font-size: 1.563vw;
+  }
+
+  .item-detail li {
+    margin-bottom: 0.977vw;
+  }
+
+  .icon,
+  .card-body ul li span {
+    font-size: 1.829vw;
+  }
+
+  .btn {
+    margin-top: 0.977vw;
+    padding: 0.75vw 0.488vw;
+    font-size: 1.563vw;
+  }
+
+  /*Aside*/
+  .aside {
+    top: 10.8vw;
+    width: 33.3%;
+  }
+
+  .order-title {
+    margin-bottom: 1.953vw;
+    font-size: 2.93vw;
+  }
+
+  .thead {
+    border-bottom: 0.098vw solid #808080;
+  }
+
+  .tfoot {
+    border-top: 0.098vw solid #808080;
+  }
+
+  .thead th {
+    padding: 0.488vw;
+    font-size: 1.953vw;
+  }
+
+  .table td {
+    padding: 0.977vw;
+    font-size: 1.658vw;
+  }
+
+  .detail,
+  .order-detail {
+    width: 68.359vw;
+    margin-top: 4.883vw;
+  }
+
+  .btn-detail,
+  .btn-pick {
+    padding: 0.977vw;
+    border: 0.098vw solid #808080;
+  }
+
+  .btn-back {
+    margin-top: 1.953vw;
+    padding: 0.977vw 1.953vw;
+    border: 0.098vw solid #808080;
+  }
+
+
+  .order-item-header {
+    margin: 2.930vw 0 1.953vw;
+
+  }
+
+  .order-item {
+    margin-bottom: 0.977vw;
+  }
+
+  .order-item-header li,
+  .order-item li {
+
+    width: 20.461vw;
+
+  }
+
+  .order-item-header li {
+    font-size: 2.344vw;
+  }
+
+  .order-item-footer {
+    margin-top: 2.93vw;
+  }
+
+  .order-price {
+    border-top: 0.098vw solid #000000;
+  }
+
+  .order-price span {
+    width: 22.461vw;
+    padding: 0.977vw 0;
+
+  }
+
+  .back {
+    width: 19.043vw;
+    margin-top: 2.93vw;
+
+  }
+
+  .order-notice {
+    margin-top: 0.488vw;
+    padding: 0.977vw;
+    border: 0.098vw solid #000000;
+
+  }
+
+  .order-status {
+    font-size: 1.758vw;
+
+  }
+}
+
+//For SP
+@media screen and (max-width:767.9px) {
+  .container {
+    margin: 7.813vw auto auto auto;
+    padding: 4.813vw;
+    width: 60vw;
+    border-radius: 3.125vw;
+  }
+
+  h2 {
+    font-size: 3.750vw;
+  }
+
+  .text-danger {
+    font-size: 2.513vw;
+  }
+
+  .login-form {
+    width: 80%;
+    margin: 7.813vw auto auto auto;
+  }
+
+  .login-photo {
+    margin-bottom: 3.125vw;
+  }
+
+  .logo {
+    width: 15.625vw;
+  }
+
+  .mb-20 {
+    margin-bottom: 3.125vw;
+  }
+
+  .text-box {
+    width: calc(100% - 3.906vw);
+    padding: 1.563vw;
+    border: 0.313vw solid #8fa8a9;
+    border-radius: 1.563vw;
+    font-size: 2.500vw;
+  }
+
+  .login-link {
+    margin-bottom: 3.125vw;
+  }
+
+  .submit-btn,
+  .cancel-btn {
+    padding: 1.563vw;
+    border-radius: 1.563vw;
+    font-size: 2.813vw;
+  }
+
+  .cancel-btn {
+    border: 0.156vw solid;
+  }
+
+  // Waiter Profile & change password
+  .outer-container {
+    width: 100%;
+  }
+
+  .profile-password {
+    font-size: 2.500vw;
+    margin-top: 1.563vw;
+    margin-left: 1.563vw;
+  }
+
+  .mb-10 {
+    margin-bottom: 1.563vw;
+  }
+
+  .column {
+    margin-right: 3.125vw;
+  }
+
+  .left {
+    font-size: 2.513vw;
+    margin-right: 5.469vw;
+  }
+
+  .right {
+    font-size: 2.513vw;
+  }
+
+  //Waiter Item List
+  .item-container {
+    width: 95%;
+    padding: 0;
+  }
+
+  /*Section*/
+  .section {
+    width: 50%;
+    margin-top: 3.125vw;
+  }
+
+  .card {
+    display: inline-block;
+    width: 27%;
+    margin: 3.125vw 2.813vw 3.125vw 0px;
+  }
+
+  .card img {
+    height: 14.564vw;
+    margin-bottom: 1.563vw;
+    border: 0.313vw solid #916cd6;
+    border-radius: 1.094vw;
+  }
+
+  .card:nth-of-type(4n) {
+    margin-right: 2.823vw;
+  }
+
+  .card:nth-of-type(3n) {
+    margin-right: 0;
+  }
+
+  .cat-title {
+    margin: 3.125vw 0;
+    padding: 3.125vw;
+    font-size: 6.250vw;
+    border-bottom: 0.156vw solid #808080;
+  }
+
+  .item-detail {
+    margin-bottom: 3.125vw;
+    font-size: 2.125vw;
+  }
+
+  .item-detail li {
+    margin-bottom: 1.563vw;
+  }
+
+  .icon,
+  .card-body ul li span {
+    font-size: 2.670vw;
+  }
+
+  .btn {
+    margin-top: 1.563vw;
+    padding: 1vw 0.781vw;
+    font-size: 2.6vw;
+  }
+
+  /*Aside*/
+  .aside {
+    position: sticky;
+    top: 11.8vw;
+    width: 50%;
+  }
+
+  .order-title {
+    margin-bottom: 3.125vw;
+    font-size: 3.388vw;
+
+  }
+
+  .table {
+    width: 100%;
+  }
+
+  .thead {
+    border-bottom: 0.156vw solid #808080;
+  }
+
+  .tfoot {
+    border-top: 0.156vw solid #808080;
+  }
+
+  .thead th {
+    padding: 0.781vw;
+    font-size: 2.625vw;
+  }
+
+  .table td {
+    padding: 1.563vw;
+    font-size: 2.5vw;
+  }
+
+  .detail,
+  .order-detail {
+    width: 100%;
+    margin-top: 7.813vw;
+  }
+
+  .btn-detail,
+  .btn-pick {
+    padding: 1.563vw;
+    border: 0.156vw solid #808080;
+  }
+
+  .btn-back {
+    margin-top: 3.125vw;
+    padding: 1.563vw 3.125vw;
+    border: 0.156vw solid #808080;
+  }
+
+
+  .order-item-header {
+    margin: 4.688vw 0 3.125vw;
+  }
+
+  .order-item {
+    margin-bottom: 1.563vw;
+  }
+
+  .order-item-header li,
+  .order-item li {
+    width: 29.938vw;
+    font-size: 2.5vw;
+  }
+
+  .order-item-header li {
+    font-size: 3.050vw;
+  }
+
+  .order-item-footer {
+    margin-top: 4.688vw;
+  }
+
+  .order-price {
+    border-top: 0.156vw solid #000000;
+  }
+
+  .order-price span {
+    width: 35.938vw;
+    padding: 1.563vw 0;
+    font-size: 2.5vw;
+  }
+
+  .back {
+    width: 30.469vw;
+    margin-top: 4.688vw;
+    font-size: 2.5vw;
+  }
+
+  .order-notice {
+    margin-top: 0.781vw;
+    padding: 1.563vw;
+    font-size: 2.5vw;
+    border: 0.156vw solid #000000;
+  }
+
+  .order-status {
+    font-size: 2.813vw;
+  }
+
+}

@@ -1,0 +1,47 @@
+<div class="nav">
+  <a><h1 class="ttl-logo">SCM Cafe</h1></a>
+   <div class="menu-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="menu menu-sp">
+  <ul>
+    <% if session[:waiter_id] || session[:chef_id] %>
+      <li>
+        <%= link_to "Order Lists", session[:waiter_id] ? orders_path : order_items_path,
+                    class: "link #{"is-active" if current_page?(controller: "order_items", action: "index") || current_page?("http://localhost:3000/orders")}" %>
+      </li>
+      <li>
+        <%= link_to "Item List", session[:waiter_id] ? waiters_path : items_path,
+                    class: "link #{"is-active" if current_page?(controller: "items", action: "index") || current_page?(controller: "waiters", action: "index")}" %>
+      </li>
+      <li>
+        <%= link_to "Profile",
+                    session[:waiter_id] ? waiter_path(id: session[:waiter_id]) : chef_path(id: session[:chef_id]),
+                    class: "link #{"is-active" if current_page?("http://localhost:3000/chefs/#{session[:chef_id]}") || current_page?("http://localhost:3000/waiters/#{session[:waiter_id]}")}" %>
+      </li>
+      <li><%= link_to "Graph", graph_path, class: "link #{"is-active" if current_page?(controller: "chefs", action: "graph")}" %></li>
+      <li>
+        <%= link_to "Log Out", session[:waiter_id] ? waiter_sign_out_path : chef_sign_out_path, class: "link", method: :post %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+</div>
+<script>
+//menu JS
+$(document).ready(function () {
+    $('.menu-btn').click(function () {
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+        }
+        else {
+            $(this).addClass('active');
+        }
+        $('.menu-sp').animate({ width: 'toggle' });
+    });
+});
+</script>
+
+

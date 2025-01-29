@@ -1,0 +1,2 @@
+module WaiterLoginHelper
+end

@@ -1,0 +1,276 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require reset.css
+*/
+@import "reset";
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: " ";
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.notice {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  color: red;
+  text-align: center;
+}
+
+.alert {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  color: green;
+  text-align: center;
+}
+
+.error {
+  color: red;
+}
+
+.center {
+  text-align: center;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+/* nav */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  background: #d2b48c;
+}
+
+.nav ul {
+  display: inline-flex;
+}
+
+.nav ul li {
+  margin-right: 20px;
+}
+
+.nav ul li a {
+  display: inline-block;
+  padding: 10px;
+}
+
+.nav ul li:last-child {
+  margin-right: 0;
+}
+
+.ttl-logo {
+  color: dimgray;
+  font-family: fantasy;
+  font-size: 30px;
+  font-style: italic;
+}
+
+.link {
+  color: #000000;
+  text-decoration: none;
+}
+
+.is-active {
+  color: darkviolet;
+}
+
+.nav ul li a:hover {
+  background-color: dimgray;
+}
+
+.nav ul li:hover .link {
+  color: #ffffff;
+}
+
+/* item */
+.hdr {
+  padding: 15px 0;
+  background-color: #d7dfdf;
+  color: #000000;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  font-style: italic;
+}
+
+/* For Ipad  */
+@media screen and (min-width:768px) and (max-width:1024px) {
+  .mt-30 {
+    margin-top: 2.930vw;
+  }
+
+  .mb-40 {
+    margin-bottom: 3.906vw;
+  }
+
+  /* nav */
+  .nav {
+    padding: 1.953vw 2.930vw;
+  }
+
+  .nav ul li {
+    margin-right: 1.953vw;
+  }
+
+  .nav ul li a {
+    padding: 0.977vw;
+    font-size: 1.707vw;
+  }
+
+  .ttl-logo {
+    font-size: 2.93vw;
+  }
+
+  /* item */
+  .hdr {
+    padding: 1.15vw 0;
+    font-size: 2.539vw;
+  }
+}
+
+/* For Sp */
+@media screen and (max-width:767.9px) {
+  .mt-30 {
+    margin-top: 4.688vw;
+  }
+
+  .mb-40 {
+    margin-bottom: 6.250vw;
+  }
+
+  /* nav */
+  .nav {
+    position: relative;
+    padding: 1.925vw 2.688vw;
+
+  }
+
+  .ttl-logo {
+    font-size: 3.688vw;
+
+  }
+
+  .link {
+    color: #ffffff;
+  }
+
+  .is-active {
+    color: #00d399;
+  }
+
+  .menu ul li a {
+    display: block;
+    padding: 3.344vw 0;
+    width: 100%;
+    margin-top: 0;
+    font-size: 2.800vw;
+    margin-right: 0;
+    float: left;
+  }
+
+  .nav ul {
+    display: block;
+  }
+
+  .nav ul li {
+    margin-right: 0;
+  }
+
+  .menu ul {
+    display: block;
+  }
+
+  .nav ul li a:hover {
+    background-color: dimgray;
+  }
+
+  .nav ul li:hover .link {
+    color: #ffffff;
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    right: -50vw;
+    top: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 10, 0.64);
+    text-align: center;
+    transform: translateX(-50%);
+  }
+
+  .menu-btn {
+    position: absolute;
+    right: 4.688vw;
+    z-index: 1;
+    top: 2.5vw;
+    width: 3.259vw;
+    height: 2.738vw;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+
+  .menu-btn span {
+    position: absolute;
+    right: 0;
+    left: 0;
+    width: 5vw;
+    height: 0.4vw;
+    margin: 0;
+    background-color: #ffffff;
+    transition: .4s;
+  }
+
+  .menu-btn.active span:nth-child(1) {
+    transform: translateY(1.173vw) rotate(-45deg);
+  }
+
+  .menu-btn.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-btn.active span:nth-child(3) {
+    transform: translateY(-1.134vw) rotate(45deg);
+  }
+
+  .menu-btn span:nth-child(2) {
+    top: 1.204vw;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  .menu-btn span:nth-child(3) {
+    bottom: 0;
+  }
+
+  /* item */
+  .hdr {
+    padding: 1vw 0;
+    font-size: 3.063vw;
+  }
+
+}
